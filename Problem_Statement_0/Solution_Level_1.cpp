@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cfloat>
+
 using namespace std;
 int main(){
     double portCapacity;
@@ -8,11 +10,11 @@ int main(){
     cout << "Enter the number of containers to be loaded onto the port: ";
     cin >> N;
 	double weight;
-	double totalWeight;
+	double totalWeight = 0;
 
 	cout << "Enter the values of individual weights of containers..." << endl;
 	double Heaviest = 0;
-	double Lightest = 10000;
+	double Lightest = DBL_MAX;
 	
     double n = 1; // n is the number of container
     while (n <= N){
@@ -38,3 +40,4 @@ cout << "Port Capacity: " << portCapacity << endl;
 cout << "Status: " << (totalWeight > portCapacity ? "Shipment exceeds port capacity" : "Shipment can be unloaded") << endl;
 return 0;
 }
+
